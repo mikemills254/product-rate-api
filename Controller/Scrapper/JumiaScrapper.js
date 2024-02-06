@@ -29,7 +29,6 @@ const fetchData = async (siteUrl) => {
         });
     });
 
-    console.log(productsInfo);
     return productsInfo;
 };
 

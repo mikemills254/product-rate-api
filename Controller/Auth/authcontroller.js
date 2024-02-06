@@ -4,8 +4,6 @@ import dotenv from 'dotenv'
 import { User } from '../../Model/model.js'
 dotenv.config()
 
-console.log('jwt token', process.env.JWT_TOKEN)
-
 export const register = async (req, res) => {
     try {
         const { username, password, email } = req.body;
@@ -44,8 +42,10 @@ export const register = async (req, res) => {
             });
         }
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({ error: "Internal server error." });
+        return res.status(500).json({ 
+            message: "Internal server error.",
+            error: error.message
+        });
     }
 }
 
