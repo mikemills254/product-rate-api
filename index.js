@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import router from './Router/Router.js';
 import Database from './Utilities/Database.js';
-
 dotenv.config();
 
 const app = express();

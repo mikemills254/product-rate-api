@@ -10,12 +10,11 @@ class Database {
                 throw new Error("DB_URI environment variable is not defined.");
             }
 
-            await mongoose.connect(process.env.DB_URI, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-            });
+            await mongoose.connect( process.env.DB_URI );
 
-            return mongoose.connection;
+            return {
+                message: 'Successfully connected to database'
+            };
         } catch (error) {
             throw new Error("Error connecting to MongoDB: " + error.message);
         }
